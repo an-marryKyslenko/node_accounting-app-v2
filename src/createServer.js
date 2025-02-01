@@ -4,14 +4,14 @@ const express = require('express');
 const cors = require('cors');
 const { usersRouter } = require('./routers/users.router');
 const { router: expensesRouter } = require('./routers/expenses.router');
-const usersServise = require('./servises/users.servise');
-const expensesServise = require('./servises/expenses.servise');
+const usersService = require('./services/users.service');
+const expensesService = require('./services/expenses.service');
 
 function createServer() {
   const app = express();
 
-  usersServise.clearAll();
-  expensesServise.clearAll();
+  usersService.clearAll();
+  expensesService.clearAll();
 
   app.use(cors());
   app.use(express.json());
